@@ -31,4 +31,16 @@ def calcula_pontos_soma(dados):
     for i in range(len(dados)):
         soma+=dados[i]
     return soma
+
+def calcula_pontos_sequencia_baixa(faces):
+    for numero in faces:
+        if (numero + 1 in faces and
+            numero + 2 in faces and
+            numero + 3 in faces):
+            return 15
+    return 0
+          
+          
+     
+     
           
