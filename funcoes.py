@@ -25,3 +25,10 @@ def calcula_pontos_regra_simples(numeros_inteiros):
                   quantidade +=1
         resultado[numero] = numero * quantidade
     return resultado
+
+def calcula_pontos_soma(dados):
+    soma = 0
+    for i in range(len(dados)):
+        soma+=dados[i]
+    return soma
+          
