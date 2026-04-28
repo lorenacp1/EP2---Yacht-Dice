@@ -40,7 +40,11 @@ def calcula_pontos_sequencia_baixa(faces):
             return 15
     return 0
           
-          
-     
-     
-          
+def calcula_pontos_sequencia_alta(faces):
+     for numero in faces:
+        if (numero + 1 in faces and
+            numero + 2 in faces and
+            numero + 3 in faces and
+            numero + 4 in faces):
+            return 30
+    return 0
