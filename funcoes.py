@@ -15,3 +15,13 @@ def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
      dados_rolados.append(dados_no_estoque[dado_para_remover])
      dados_no_estoque.pop(dado_para_remover)
      return[dados_rolados, dados_no_estoque]
+
+def calcula_pontos_regra_simples(numeros_inteiros):
+    resultado = {}
+     for numero in range(1, 7):
+        quantidade = 0
+        for item in numeros_inteiros:
+              if item == numero:
+                  quantidade +=1
+        resultado[numero] = numero * quantidade
+    return quantidade
