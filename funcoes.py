@@ -103,13 +103,16 @@ def calcula_pontos_regra_avancada(faces):
 
 def faz_jogada(dados,categoria,cartela_de_pontos):
 
-    if int(categoria) in cartela_de_pontos['regra_simples']:
-        pontos_s = calcula_pontos_regra_simples(dados)
-        categoria_int = int(categoria)
-        cartela_de_pontos['regra_simples'][categoria_int] =pontos_s[categoria]
     if categoria in cartela_de_pontos['regra_avancada']:
         pontos_a = calcula_pontos_regra_avancada(dados)
         cartela_de_pontos['regra_avancada'][categoria] = pontos_a[categoria]
+
+    else:
+        categoria_int = int(categoria)
+        pontos_s = calcula_pontos_regra_simples(dados)
+        categoria_int = int(categoria)
+        cartela_de_pontos['regra_simples'][categoria_int] =pontos_s[categoria_int]
+
     return cartela_de_pontos
 
 
