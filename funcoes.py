@@ -48,3 +48,16 @@ def calcula_pontos_sequencia_alta(faces):
             numero + 4 in faces):
             return 30
     return 0
+
+def calcula_pontos_full_house(faces):
+    contagem = []
+    for i in range(1,7):
+        quantidade = 0
+        for numero in faces:
+            if numero == i:
+                quantidade +=1
+        if quantidade > 0:
+            contagem.append(quantidade)
+    if 3 in contagem and 2 in contagem:
+        return sum(faces)
+    return 0
