@@ -50,14 +50,17 @@ def calcula_pontos_sequencia_alta(faces):
     return 0
 
 def calcula_pontos_full_house(faces):
-    contagem = []
+    contagens = []
     for i in range(1,7):
         quantidade = 0
         for numero in faces:
             if numero == i:
                 quantidade +=1
         if quantidade > 0:
-            contagem.append(quantidade)
-    if 3 in contagem and 2 in contagem:
-        return sum(faces)
+            contagens.append(quantidade)
+    if 3 in contagens and 2 in contagens:
+        soma = 0
+        for numero in faces:
+            soma += numero
+        return soma
     return 0
