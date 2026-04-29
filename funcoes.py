@@ -87,8 +87,5 @@ def calcula_pontos_quina(faces):
             if numero == i:
                 quantidade += 1
         if quantidade >= 5:
-            soma = 0
-            for numero in faces:
-                soma += numero
-            return soma
+            return 50
     return 0
