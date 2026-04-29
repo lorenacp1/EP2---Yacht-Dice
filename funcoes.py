@@ -64,3 +64,19 @@ def calcula_pontos_full_house(faces):
             soma += numero
         return soma
     return 0
+
+def calcula_pontos_quadra(faces):
+    contagens = []
+    for i in range(1,7):
+        quantidade = 0
+        for numero in faces:
+            if numero == i:
+                quantidade +=1
+        if quantidade > 0:
+            contagens.append(quantidade)
+    if 4 in contagens:
+        soma = 0
+        for numero in faces:
+            soma += numero
+        return soma
+    return 0
