@@ -1,3 +1,4 @@
+```python
 from funcoes import *
 
 cartela = {
@@ -52,19 +53,21 @@ while rodada <= 12:
         if opcao == '1':
             print("Digite o índice do dado a ser guardado (0 a 4):")
             indice = int(input())
-            resultado = guardar_dado(dados_rolados, dados_guardados, indice)
+            resultado = guardar_dado(dados_rolados[:], dados_guardados[:], indice)
             dados_rolados = resultado[0]
             dados_guardados = resultado[1]
 
         elif opcao == '2':
             print("Digite o índice do dado a ser removido (0 a 4):")
             indice = int(input())
-            resultado = remover_dado(dados_rolados, dados_guardados, indice)
+            resultado = remover_dado(dados_rolados[:], dados_guardados[:], indice)
             dados_rolados = resultado[0]
             dados_guardados = resultado[1]
 
         elif opcao == '3':
             if rolagens >= 2:
+                print("Você já usou todas as rerrolagens.")
+            elif len(dados_rolados) == 0:
                 print("Você já usou todas as rerrolagens.")
             else:
                 dados_rolados = rolar_dados(len(dados_rolados))
@@ -122,3 +125,4 @@ for valor in cartela['regra_avancada'].values():
 bonus = 35 if pontos_simples >= 63 else 0
 pontuacao = pontos_simples + pontos_avancada + bonus
 print(f"Pontuação total: {pontuacao}")
+```
