@@ -25,6 +25,9 @@ for rodada in range(1,13):
     for ponto in cartela['regra_avancada'].values():
         if ponto != -1:
             jogadas_1 += 1
+    imprime_cartela(cartela)  # <-- adicionar aqui
+    print(f'Dados rolados: {dados_rolados}')
+    print(f'Dados guardados: {dados_guardados}')
 
     print(f'Dados rolados: {dados_rolados}')
     print(f'Dados guardados: {dados_guardados}')
