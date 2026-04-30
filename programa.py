@@ -64,6 +64,37 @@ for rodada in range(1,13):
                 print("Combinação inválida. Tente novamente.")
             else:
                 if combinacao in cartela['regra_avancada']:
-                    
-
-
+                    ja_usada = cartela['regra_avancada'][combinacao] != -1
+                else:
+                    ja_usada = cartela['regra_simples'][int(combinacao)] != -1
+                if ja_usada:
+                    print("Essa combinação já foi utilizada")
+                else:
+                    faz_jogada(dados_t, combinacao, cartela)
+        else:
+            print("Opção inválida. Tente novamente.")
+        jogadas_2 = 0
+        for valor in cartela['regra simples'].values():
+            if valor != -1:
+                jogadas_2 += 1
+        for valor in cartela['regra_avancada'].values():
+            if valor != -1:
+                jogadas_2 += 1
+        if jogadas_2 == jogadas_1:
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
+imprime_cartela(cartela)
+pontos_simples = 0
+for valor in cartela['regra_simples'].values():
+    if valor != -1:
+        pontos_simples += valor
+pontos_avancada = 0
+for valor in cartela['regra_avancada'].values():
+    if valor != -1:
+        pontos_avancada += valor
+if pontos_simples >= 63:
+    bonus = 35
+else:
+    bonus = 0
+pontuacao = pontos_simples + pontos_avancada + bonus
+print(f"Pontuação total: {pontuacao}")
