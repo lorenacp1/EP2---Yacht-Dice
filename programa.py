@@ -78,24 +78,24 @@ while rodada <= 12:
         elif opcao == '0':
             combinacao_feita = False
             while not combinacao_feita:
-            print("Digite a combinação desejada:")
-            combinacao = input()
-            dados_t = dados_rolados + dados_guardados
+                print("Digite a combinação desejada:")
+                combinacao = input()
+                dados_t = dados_rolados + dados_guardados
 
-            if combinacao not in combinacoes_possiveis:
-                print("Combinação inválida. Tente novamente.")
-            else:
-                if combinacao in cartela['regra_avancada']:
-                    ja_usada = cartela['regra_avancada'][combinacao] != -1
+                if combinacao not in combinacoes_possiveis:
+                    print("Combinação inválida. Tente novamente.")
                 else:
-                    ja_usada = cartela['regra_simples'][int(combinacao)] != -1
+                    if combinacao in cartela['regra_avancada']:
+                        ja_usada = cartela['regra_avancada'][combinacao] != -1
+                    else:
+                        ja_usada = cartela['regra_simples'][int(combinacao)] != -1
 
-                if ja_usada:
-                    print("Essa combinação já foi utilizada.")
-                else:
-                    faz_jogada(dados_t, combinacao, cartela)
-                    rodada += 1
-                    combinacao_feita = True
+                    if ja_usada:
+                        print("Essa combinação já foi utilizada.")
+                    else:
+                        faz_jogada(dados_t, combinacao, cartela)
+                        rodada += 1
+                        combinacao_feita = True
 
         else:
             print("Opção inválida. Tente novamente.")
