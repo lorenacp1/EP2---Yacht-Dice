@@ -74,7 +74,7 @@ for rodada in range(1,13):
         else:
             print("Opção inválida. Tente novamente.")
         jogadas_2 = 0
-        for valor in cartela['regra simples'].values():
+        for valor in cartela['regra_simples'].values():
             if valor != -1:
                 jogadas_2 += 1
         for valor in cartela['regra_avancada'].values():
