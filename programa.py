@@ -52,18 +52,16 @@ while rodada <= 12:
         if opcao == '1':
             print("Digite o índice do dado a ser guardado (0 a 4):")
             indice = int(input())
-            if 0 <= indice < len(dados_rolados):
-                resultado = guardar_dado(dados_rolados, dados_guardados, indice)
-                dados_rolados = resultado[0]
-                dados_guardados = resultado[1]
+            resultado = guardar_dado(dados_rolados, dados_guardados, indice)
+            dados_rolados = resultado[0]
+            dados_guardados = resultado[1]
 
         elif opcao == '2':
             print("Digite o índice do dado a ser removido (0 a 4):")
             indice = int(input())
-            if 0 <= indice < len(dados_guardados):
-                resultado = remover_dado(dados_rolados, dados_guardados, indice)
-                dados_rolados = resultado[0]
-                dados_guardados = resultado[1]
+            resultado = remover_dado(dados_rolados, dados_guardados, indice)
+            dados_rolados = resultado[0]
+            dados_guardados = resultado[1]
 
         elif opcao == '3':
             if rolagens >= 2:
