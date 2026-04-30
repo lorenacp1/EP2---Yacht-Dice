@@ -11,7 +11,7 @@ cartela = {
     }
 }
 
-combinacoes_possiveis = ['1','2','3','4','5',6]
+combinacoes_possiveis = ['1','2','3','4','5','6']
 
 for rodada in range(1,13):
     dados_rolados = rolar_dados(5)
