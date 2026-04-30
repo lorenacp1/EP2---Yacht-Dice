@@ -125,4 +125,3 @@ for valor in cartela['regra_avancada'].values():
 bonus = 35 if pontos_simples >= 63 else 0
 pontuacao = pontos_simples + pontos_avancada + bonus
 print(f"Pontuação total: {pontuacao}")
-```
