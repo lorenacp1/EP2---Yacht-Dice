@@ -2,16 +2,16 @@ from funcoes import *
 cartela = {
     'regra_simples': {i: -1 for i in range(1, 7)},
     'regra_avancada': {
-        'cinco_iguais': -1,
-        'full_house': -1,
-        'quadra': -1,
-        'sem_combinacao': -1,
-        'sequencia_alta': -1,
-        'sequencia_baixa': -1,
-    }
+    'sem_combinacao': -1,
+    'quadra': -1,
+    'full_house': -1,
+    'sequencia_baixa': -1,
+    'sequencia_alta': -1,
+    'cinco_iguais': -1,
+}
 }
 
-combinacoes_possiveis = ['1','2','3','4','5','6','cinco_iguais','full_house','quadra','sem_combinacao','sequencia_alta','sequencia_baixa']
+combinacoes_possiveis = ['1','2','3','4','5','6','sem_combinacao', 'quadra', 'full_house', 'sequencia_baixa', 'sequencia_alta', 'cinco_iguais']
 
 for rodada in range(1,13):
     dados_rolados = rolar_dados(5)
