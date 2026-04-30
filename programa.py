@@ -76,6 +76,8 @@ while rodada <= 12:
             imprime_cartela(cartela)
 
         elif opcao == '0':
+            combinacao_feita = False
+            while not combinacao_feita:
             print("Digite a combinação desejada:")
             combinacao = input()
             dados_t = dados_rolados + dados_guardados
@@ -93,6 +95,7 @@ while rodada <= 12:
                 else:
                     faz_jogada(dados_t, combinacao, cartela)
                     rodada += 1
+                    combinacao_feita = True
 
         else:
             print("Opção inválida. Tente novamente.")
