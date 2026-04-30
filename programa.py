@@ -28,7 +28,14 @@ for rodada in range(1, 13):
     print(f'Dados guardados: {dados_guardados}')
 
     jogadas_2 = jogadas_1
+    mostrar_dados = False  # controla se deve reexibir dados antes do menu
+
     while jogadas_2 == jogadas_1:
+        if mostrar_dados:
+            print(f"Dados rolados: {dados_rolados}")
+            print(f"Dados guardados: {dados_guardados}")
+        mostrar_dados = False
+
         print("Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:")
         opcao = input()
 
@@ -38,8 +45,7 @@ for rodada in range(1, 13):
             resultado = guardar_dado(dados_rolados, dados_guardados, indice)
             dados_rolados = resultado[0]
             dados_guardados = resultado[1]
-            print(f"Dados rolados: {dados_rolados}")
-            print(f"Dados guardados: {dados_guardados}")
+            mostrar_dados = True
 
         elif opcao == '2':
             print("Digite o índice do dado a ser removido (0 a 4):")
@@ -47,8 +53,7 @@ for rodada in range(1, 13):
             resultado = remover_dado(dados_rolados, dados_guardados, indice)
             dados_rolados = resultado[0]
             dados_guardados = resultado[1]
-            print(f"Dados rolados: {dados_rolados}")
-            print(f"Dados guardados: {dados_guardados}")
+            mostrar_dados = True
 
         elif opcao == '3':
             if rolagens >= 2:
@@ -56,13 +61,11 @@ for rodada in range(1, 13):
             else:
                 dados_rolados = rolar_dados(len(dados_rolados))
                 rolagens += 1
-            print(f"Dados rolados: {dados_rolados}")
-            print(f"Dados guardados: {dados_guardados}")
+            mostrar_dados = True
 
         elif opcao == '4':
             imprime_cartela(cartela)
-            print(f"Dados rolados: {dados_rolados}")
-            print(f"Dados guardados: {dados_guardados}")
+            mostrar_dados = True
 
         elif opcao == '0':
             print("Digite a combinação desejada:")
@@ -89,7 +92,6 @@ for rodada in range(1, 13):
         jogadas_2 += sum(1 for v in cartela['regra_avancada'].values() if v != -1)
 
 imprime_cartela(cartela)
-
 pontos_simples = sum(v for v in cartela['regra_simples'].values() if v != -1)
 pontos_avancada = sum(v for v in cartela['regra_avancada'].values() if v != -1)
 bonus = 35 if pontos_simples >= 63 else 0
